@@ -14,16 +14,32 @@ def process_collection(xml, output):
         if not p.parent.isdir():
             p.parent.makedirs_p()
         with p.open('w') as fp:
-            (html,) = node
-            serialized = etree.tostring(
-                html, method='html', pretty_print=True,
-                doctype='<!doctype html>', encoding='utf-8')
+            (content,) = node
+            params = {
+                'pretty_print': True,
+                'encoding': 'utf-8',
+            }
+            if p.endswith('.html'):
+                params.update({
+                    'method': 'html',
+                    'doctype': '<!doctype html>',
+                })
+            elif p.endswith('.xml'):
+                params.update({
+                    'method': 'xml',
+                    'xml_declaration': True,
+                })
+            serialized = etree.tostring(content, **params)
             fp.write(serialized)
 
 def task_build():
     return {
         'actions': [
-            'xsltproc -o ericdavis_org.xml rushmore.xsl ericdavis_org.opml',
+            """
+            xsltproc -o ericdavis_org.xml \
+                     --stringparam lastBuildDate "$(gdate -u +'%%a, %%b %%d %%Y %%R:%%S GMT')" \
+                     rushmore.xsl ericdavis_org.opml
+            """,
             'rm -rf html/*',
             (process_collection, ['ericdavis_org.xml', 'html']),
         ],

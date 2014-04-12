@@ -4,6 +4,7 @@
   <xsl:output method="xml" version="1.0" indent="yes"/>
 
   <xsl:include href="templates.xsl"/>
+  <xsl:include href="rss.xsl"/>
 
   <!-- Build the collection of indexes and outlines -->
   <xsl:template match="/opml">
@@ -37,6 +38,9 @@
 
       <!-- Then, build the outline detail pages -->
       <xsl:apply-templates select=".//outline[@type]"/>
+
+      <!-- Build the RSS file -->
+      <xsl:call-template name="buildRSS"/>
     </collection>
   </xsl:template>
 

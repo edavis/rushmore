@@ -1,4 +1,4 @@
-#+TITLE: Source for ericdavis.org
+#+TITLE: ericdavis.org
 
 * Blog
 :PROPERTIES:
@@ -12,10 +12,10 @@
 
 **** April 12, 2014
 :PROPERTIES:
-:type: outline
-:name: 12
-:title: Saturday, April 12, 2014
-:created: Sat, 12 Apr 2014 20:16:23 GMT
+:type:     outline
+:name:     12
+:title:    Saturday, April 12, 2014
+:created:  Sat, 12 Apr 2014 20:16:23 GMT
 :END:
 
 - Back at it on another beautiful Saturday. Just spent the last 15
@@ -44,6 +44,7 @@
 :type: outline
 :name: 05
 :title: Saturday, April 5, 2014
+:created: Sat, 05 Apr 2014 21:20:38 GMT
 :END:
 
 Been working all morning on the currently untitled opml-xslt
@@ -74,6 +75,7 @@ value. Looks pretty good.
 :type: outline
 :name: 04
 :title: Friday, April 4, 2014
+:created: Fri, 04 Apr 2014 21:20:24 GMT
 :END:
 
 The main reason I wanted to build this system was to quickly jot down
@@ -99,6 +101,7 @@ mode export blocks as the content of an &lt;outline> element.
 :type: outline
 :name: 30
 :title: Sunday, March 30, 2014
+:created: Sun, 30 Mar 2014 21:20:03 GMT
 :END:
 
 - I like how this is turning out. XSLT is such a natural fit for what
@@ -136,6 +139,7 @@ post. Woo-hoo!
 :title: States
 :created: Sat, 12 Apr 2014 19:06:52 GMT
 :type: outline
+:isFeedItem: false
 :END:
 
 The US Census Bureau groups all 50 states — and DC — into the
@@ -255,13 +259,13 @@ following regions.
 :name: rushmore
 :type: outline
 :title: Rushmore TODOs
+:isFeedItem: false
 :END:
 
 A collection of TODO items for Rushmore as I think of them.
 
 - TODO
   - General
-    - Build an RSS feed
     - Include a "Last Built" timestamp in the footer
     - Generate &lt;title> for archive pages
     - Add attribute to hide from index/archive pages
@@ -277,6 +281,7 @@ A collection of TODO items for Rushmore as I think of them.
       inside =dodo.py=
     - Transform GMT =created= timestamp to local time with moment.js
       for ease of reading.
+    - ericdavis.org now has an [[/rss.xml][RSS feed]]
   - April 6, 2014
     - Added a navbar
     - If a headline has a =css= attribute, include it in the detail
@@ -297,6 +302,7 @@ A collection of TODO items for Rushmore as I think of them.
 :type: outline
 :name: about
 :title: What's your story, Eric?
+:isFeedItem: false
 :END:
 
 I'm a programmer in Las Vegas, NV.
