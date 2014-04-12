@@ -1,0 +1,141 @@
+/* ===========================================================================
+   Styles for the navbar
+   =========================================================================== */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+  padding: 15px 0;
+  margin: 0 0 20px;
+  background: #DFE2DB;
+  color: #222;
+  font: 21px Alegreya, Georgia, serif;
+}
+
+#navbar ul {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#navbar li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar .name {
+  font-size: 1.15em;
+  font-weight: 700;
+  padding-right: 15px;
+}
+
+/* ===========================================================================
+   Links
+   =========================================================================== */
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #222;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+li a:link,
+li a:visited,
+li a:hover,
+li a:active {
+  color: inherit;
+  text-decoration: underline;
+}
+
+li a:hover {
+  text-decoration: none;
+}
+
+/* ===========================================================================
+   Container and root outline
+   =========================================================================== */
+
+.container {
+  width: 600px;
+  margin: 160px auto 230px;
+}
+
+.container ul {
+  margin-right: 5px;
+}
+
+.container li {
+  margin-bottom: 10px;
+  font: 18px/1.6 Georgia, serif;
+}
+
+.fa-li {
+  padding-top: 3px;
+  margin-left: 4px;
+}
+
+li.no-children > i.fa {
+  color: #D3D3D3;
+}
+
+li.has-children ul {
+  margin: 10px 0 10px 21px;
+}
+
+li.has-children li {
+  margin-bottom: 5px;
+}
+
+li.has-children[data-collapse="true"] ul {
+  display: none;
+}
+
+body#index ul.root {
+  margin-bottom: 110px;
+}
+
+/* ===========================================================================
+   Header
+   =========================================================================== */
+
+header {
+  margin-bottom: 30px;
+  border-bottom: thin solid #eee;
+}
+
+h1 {
+  font-family: Alegreya, Georgia, serif;
+  text-align: center;
+  margin-bottom: .5em;
+}
+
+.subtitle {
+  font: 400 1.1em/1.2 Alegreya, Georgia, serif;
+  text-align: center;
+  margin-bottom: 1.1em;
+}
+
+.created {
+  display: block;
+  text-align: center;
+  margin-bottom: 30px;
+  font: italic 80% Verdana, sans-serif;
+}

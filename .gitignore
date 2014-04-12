@@ -1,0 +1,6 @@
+.DS_Store
+.doit.db
+*.pyc
+html/
+*.opml
+*.xml

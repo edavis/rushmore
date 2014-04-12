@@ -1,0 +1,302 @@
+#+TITLE: Source for ericdavis.org
+
+* Blog
+:PROPERTIES:
+:name: blog
+:END:
+** 2014
+*** April 2014
+:PROPERTIES:
+:name: 04
+:END:
+
+**** April 12, 2014
+:PROPERTIES:
+:type: outline
+:name: 12
+:title: Saturday, April 12, 2014
+:created: Sat, 12 Apr 2014 20:16:23 GMT
+:END:
+
+- Back at it on another beautiful Saturday. Just spent the last 15
+  minutes going back over the codebase. That's the downside of this
+  really being a weekend project: It takes time to get back up to
+  speed. I'm going to try John Resig's approach soon of working on it
+  30 minutes every day.
+- I'm going without coffee this morning. First time in years. Curious
+  to see if/how it effects me. I can already feel the headache
+  creeping up.
+- Decided I don't like the native OPML editing. Or, at least, not how
+  it works currently. Going back to a system where I edit Org files
+  while OPML is just a transport to XSLT.
+- Worknotes:
+  - Formatting of bold, italics and monospace in list items still
+    doesn't work like I want but in the interest of not spending an
+    entire morning on it I'm going to move on.
+  - Merged the org-opml-item fixes into org-opml's master branch. Left
+    in the =structure= stuff, as it's not hurting anything and is
+    required to roundtrip successfully. Though I will have to
+    re-evaluate how everything there fits together one of these days.
+  - Added a =created= attribute to this post.
+
+**** April 5, 2014
+:PROPERTIES:
+:type: outline
+:name: 05
+:title: Saturday, April 5, 2014
+:END:
+
+Been working all morning on the currently untitled opml-xslt
+project. Really do need to come up with a name for it.
+
+This is a brand new entry. I'm curious how completely fresh content
+will look. Most everything created so far was tailored to fit the CMS,
+but with this, I'm treating it like the CMS is done and I'm just
+creating a new entry fresh. As you can probably tell, I'm getting
+long-winded because I also want to see how longer paragraphs look.
+
+I need to figure out what to do with the timestamps. Maybe go back to
+"created" attribute while putting a "last built" in a footer.
+
+- The created attribute is now used instead of document.lastModified.
+  - Nothing is displayed if no created attribute exists.
+
+Cleaned up the XSL templates. Removed all the &lt;xsl:attribute>
+elements I could in favor of directly setting the path attribute. Also
+started using &lt;xsl:variable>.
+
+Changed how PROPERTIES is displayed on the OPML. Now a more subtle
+DarkSlateGrey for the keyword face and a brightish white for the
+value. Looks pretty good.
+
+**** April 4, 2014
+:PROPERTIES:
+:type: outline
+:name: 04
+:title: Friday, April 4, 2014
+:END:
+
+The main reason I wanted to build this system was to quickly jot down
+notes and then easily share them with the world.
+
+Other static HTML generators exist, but none of them worked exactly
+how I wanted.
+
+I find the idea of an “outliner as a CMS” to be amazing. I didn't want
+to maintain a directory full of Markdown files. I want to maintain
+structure and navigation through nested outlines. It just feels more
+natural this way.
+
+Another thing I want to explore tomorrow is including raw CDATA of Org
+mode export blocks as the content of an &lt;outline> element.
+
+*** March 2014
+:PROPERTIES:
+:name: 03
+:END:
+**** March 30, 2014
+:PROPERTIES:
+:type: outline
+:name: 30
+:title: Sunday, March 30, 2014
+:END:
+
+- I like how this is turning out. XSLT is such a natural fit for what
+  I'm trying to do I'm surprised I hadn't thought of it earlier.
+  - Actually, I think I did. Though not like this.
+
+A noteblog differs from a regular blog in that it doesn't require
+titles.
+
+I'm using ul/li tags to give the base structure to it all.
+
+I think I need to step back for a bit and map out how it all fits
+together. Too often I dive right in with code without giving enough
+thought to how everything fits together. As a result, the results come
+out subpar.
+
+- It's kind of crazy to think how many moving pieces I've managed to
+  fit together:
+  - Emacs provides the editing/programming environment
+  - Org mode is the interface that edits the docs
+  - OPML to translate Org mode style files to an XML dialect for
+    outlines
+  - XSLT translates the OPML to an intermediary XML format. This is
+    needed as creating multiple files isn't supported in XSLT 1.0
+    which is what xsltproc uses.
+  - Python takes the XML file and generates the HTML files
+
+And just like that, I converted a note post into an outline
+post. Woo-hoo!
+
+* States
+:PROPERTIES:
+:subtitle: United States Census Bureau regions and divisions
+:name: states
+:title: States
+:created: Sat, 12 Apr 2014 19:06:52 GMT
+:type: outline
+:END:
+
+The US Census Bureau groups all 50 states — and DC — into the
+following regions.
+
+** Northeast
+*** New England
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Connecticut
+- Maine
+- Massachusetts
+- New Hampshire
+- Rhode Island
+- Vermont
+
+*** Mid-Atlantic
+:PROPERTIES:
+:collapse: true
+:END:
+
+- New Jersey
+- New York
+- Pennsylvania
+
+** Midwest
+*** East North Central
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Illinois
+- Indiana
+- Michigan
+- Ohio
+- Wisconsin
+
+*** West North Central
+:PROPERTIES:
+:collapse: false
+:END:
+
+- Iowa
+- Kansas
+- Minnesota
+- Missouri
+- Nebraska
+- North Dakota
+- South Dakota
+
+** South
+*** South Atlantic
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Delaware
+- Florida
+- Georgia
+- Maryland
+- North Carolina
+- South Carolina
+- Virginia
+- Washington, D.C.
+- West Virginia
+
+*** East South Central
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Alabama
+- Kentucky
+- Mississippi
+- Tennessee
+
+*** West South Central
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Arkansas
+- Louisiana
+- Oklahoma
+- Texas
+
+** West
+*** Mountain
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Arizona
+- Colorado
+- Idaho
+- Montana
+- Nevada
+- New Mexico
+- Utah
+- Wyoming
+
+*** Pacific
+:PROPERTIES:
+:collapse: true
+:END:
+
+- Alaska
+- California
+- Hawaii
+- Oregon
+- Washington
+
+* Rushmore
+:PROPERTIES:
+:name: rushmore
+:type: outline
+:title: Rushmore TODOs
+:END:
+
+A collection of TODO items for Rushmore as I think of them.
+
+- TODO
+  - General
+    - Build an RSS feed
+    - Include a "Last Built" timestamp in the footer
+    - Generate &lt;title> for archive pages
+    - Add attribute to hide from index/archive pages
+    - Make whole navbar system customizable (twitter, facebook, etc.)
+  - Docs
+    - Push everything to Github
+    - Write up docs on how to get started
+    - Announce on opml-dev mailing list
+- Done
+  - April 12, 2014
+    - Make =li.no-children > i.fa= /slightly/ darker
+    - The generated XML file is now split by =process_collection=
+      inside =dodo.py=
+    - Transform GMT =created= timestamp to local time with moment.js
+      for ease of reading.
+  - April 6, 2014
+    - Added a navbar
+    - If a headline has a =css= attribute, include it in the detail
+      page =head= element
+    - Use Python's doit for the build system
+  - April 5, 2014
+    - Add collapse handling of headlines
+    - Build navigation index pages
+    - Move CSS to external stylesheet
+- Someday
+  - Use FontAwesome checkboxes when Org uses it? Would need to capture
+    this in the OPML, but should be doable
+  - Fix spacing issues when bold/italic sits next to a punctuation mark
+  - Add a =type=html= node type
+
+* About
+:PROPERTIES:
+:type: outline
+:name: about
+:title: What's your story, Eric?
+:END:
+
+I'm a programmer in Las Vegas, NV.
