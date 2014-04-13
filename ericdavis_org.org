@@ -9,6 +9,25 @@
 :PROPERTIES:
 :name:     04
 :END:
+**** April 13, 2014
+:PROPERTIES:
+:type:     outline
+:name:     13
+:title:    Sunday, April 13, 2014
+:created:  Sun, 13 Apr 2014 16:00:41 GMT
+:END:
+
+- Watched two movies last night on Netflix:
+  - [[http://www.imdb.com/title/tt2281159/][Contracted]] — a [[http://en.wikipedia.org/wiki/Body_horror][body horror]] flick about a young woman and the
+    repercussions she faces following a sexual assault. The acting
+    fell flat a few times, but I really enjoyed the make-up and
+    special effects.
+  - [[http://www.imdb.com/title/tt1151309/][Bigger, Faster, Stronger*]] — a documentary about the role
+    performance-enhancing drugs play in America's psyche. Also really
+    enjoyed this, even if it ran about 15 minutes too long.
+- Day two of not drinking coffee. I ended up having a minor headache
+  for most of yesterday. Still a bit of a headache today, though not
+  too bad.
 
 **** April 12, 2014
 :PROPERTIES:
