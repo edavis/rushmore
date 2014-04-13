@@ -8,29 +8,33 @@
   <xsl:template mode="rss" match="outline[not(@type)]">
     <xsl:choose>
       <xsl:when test="count(outline) and ../@type">
-	&lt;p>
-	  <xsl:value-of select="@text"/>
-	  &lt;ul>
+	<p>
+	  <xsl:value-of select="@text" disable-output-escaping="yes"/>
+	  <ul>
 	    <xsl:apply-templates mode="rss" select="outline"/>
-	  &lt;/ul>
-	&lt;/p>
+	  </ul>
+	</p>
       </xsl:when>
 
       <xsl:when test="count(outline) and not(../@type)">
-	&lt;li>
-	  <xsl:value-of select="@text"/>
-	  &lt;ul>
+	<li>
+	  <xsl:value-of select="@text" disable-output-escaping="yes"/>
+	  <ul>
 	    <xsl:apply-templates mode="rss" select="outline"/>
-	  &lt;/ul>
-	&lt;/li>
+	  </ul>
+	</li>
       </xsl:when>
 
       <xsl:when test="../@type">
-	&lt;p> <xsl:value-of select="@text"/> &lt;/p>
+	<p>
+	  <xsl:value-of select="@text" disable-output-escaping="yes"/>
+	</p>
       </xsl:when>
 
       <xsl:otherwise>
-	&lt;li> <xsl:value-of select="@text"/> &lt;/li>
+	<li>
+	  <xsl:value-of select="@text" disable-output-escaping="yes"/>
+	</li>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -72,7 +76,9 @@
 	      <!-- description -->
 	      <xsl:if test="count(outline)">
 		<description>
+		  <xsl:text disable-output-escaping="yes">&lt;![CDATA[</xsl:text>
 		  <xsl:apply-templates mode="rss" select="outline"/>
+		  <xsl:text disable-output-escaping="yes">]]&gt;</xsl:text>
 		</description>
 	      </xsl:if>
 
