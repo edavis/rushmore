@@ -53,7 +53,7 @@
       <ul>
 	<li class="name"><a href="/">Eric Davis</a></li>
 	<li><a href="/about.html">About</a></li>
-	<li><a href="/colophon.html">Colophon</a></li>
+	<!-- <li><a href="/colophon.html">Colophon</a></li> -->
 	<li><a href="mailto:eric@davising.com"><i style="color:#66757f;" class="fa fa-envelope"></i></a></li>
 	<li><a href="https://twitter.com/ejd791"><i style="color:#55ACEE;" class="fa fa-twitter"></i></a></li>
 	<li><a href="https://www.facebook.com/circa1979"><i style="color:#3B5998;" class="fa fa-facebook-square"></i></a></li>
